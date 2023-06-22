@@ -11,9 +11,13 @@ public class EnumMappingController {
 
     // curl http://localhost:8080/enummapping/getByDifficulty?difficulty=Easy => returns 'Easy'
     @GetMapping("/getByDifficulty")
-    public String getByDifficulty(@RequestParam(required = false) Difficulty difficulty){
-        if ((difficulty != null) && (difficulty.name().matches("\\b(Easy|Difficult|Medium|Varies)\\b"))) {
-            return difficulty.name();
+    public String getByDifficulty(@RequestParam(required = false) Difficulty difficulty) {
+        if (difficulty != null) {
+            if (difficulty.name().matches("\\b(Easy|Difficult|Medium|Varies)\\b")) {
+                return difficulty.name();
+            } else {
+                return "Bad Request";
+            }
         }
         return "NULL";
     }

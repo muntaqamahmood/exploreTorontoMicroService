@@ -1,16 +1,20 @@
 package com.example.ec.exploretoronto.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.UUID;
 
-
+@Entity
 public class TourPackage {
-    private UUID code;
+    @Id
+    private String code;
     private String name;
 
-    public UUID getCode() {
+    public String getCode() {
         return code;
     }
-    public void setCode(UUID code) {
+    public void setCode(String code) {
         this.code = code;
     }
 }
