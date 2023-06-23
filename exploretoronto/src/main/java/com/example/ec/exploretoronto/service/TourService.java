@@ -26,15 +26,15 @@ public class TourService {
         TourPackage tourPackage = tourPackageRepository.findById(tourPackageName)
                 .orElseThrow(() -> new RuntimeException("Tour Package not found!"));
 
-        return tourRepository.save(new Tour(title,
-                 description,
-                 blurb,
-                 price,
-                 duration,
-                 bullets,
-                 keywords,
-                 tourPackage,
-                 difficulty,
+        return tourRepository.save(new Tour(title, description, blurb,
+                price, duration, bullets, keywords, tourPackage, difficulty,
                  region));
+    }
+    /**
+     *Calculate number of Tours in the Database
+     * @return the total
+     * */
+    public long total() {
+        return tourRepository.count();
     }
 }
