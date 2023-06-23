@@ -25,9 +25,30 @@ public class Tour {
     //Many-to-One relationship
     @ManyToOne
     private TourPackage tourPackage;
+
     @Column
     @Enumerated
     private Region region;
+
+    @Column
+    @Enumerated
+    private Difficulty difficulty;
+
+    public Tour(String title, String description, String blurb, Integer price, String duration, String bullets, String keywords, TourPackage tourPackage, Difficulty difficulty, Region region) {
+        this.title = title;
+        this.description = description;
+        this.blurb = blurb;
+        this.price = price;
+        this.duration = duration;
+        this.bullets = bullets;
+        this.keywords = keywords;
+        this.tourPackage = tourPackage;
+        this.difficulty = difficulty;
+        this.region = region;
+    }
+    protected Tour(){
+
+    }
 
     public String getTitle() {
         return title;
@@ -107,25 +128,6 @@ public class Tour {
 
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
-    }
-
-    @Column
-    @Enumerated
-    private Difficulty difficulty;
-
-    public Tour(Integer id, String title, String description, String blurb, Integer price, String duration, String bullets, String keywords, TourPackage tourPackage) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.blurb = blurb;
-        this.price = price;
-        this.duration = duration;
-        this.bullets = bullets;
-        this.keywords = keywords;
-        this.tourPackage = tourPackage;
-    }
-    protected Tour(){
-
     }
 
     public void setId(Integer id) {
