@@ -28,6 +28,7 @@ public class ExploretorontoApplication implements CommandLineRunner {
 		long numOfTours = tourService.total();
 	}
 
+	// create Tours from external file data
 	private void createTours(String fileImport) {
 
 	}
