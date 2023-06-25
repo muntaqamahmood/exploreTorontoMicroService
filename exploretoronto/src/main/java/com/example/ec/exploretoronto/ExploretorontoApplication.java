@@ -34,7 +34,7 @@ public class ExploretorontoApplication implements CommandLineRunner {
 			createTourPackages();
 			long numOfPackages = tourPackageService.totalTourPackage();
 			//load the tours from an external file
-			createTours("exploretoronto/ExploreToronto.json");
+			createTours("/D://LinkedInLearning//exploretoronto//exploretoronto//ExploreToronto.json/");
 			long numOfTours = tourService.total();
 		} catch (Exception e) {
 			System.out.println("Error while creating Tour: " + e.getMessage());
