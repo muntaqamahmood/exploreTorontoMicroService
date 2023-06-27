@@ -43,4 +43,5 @@ public interface TourRepository extends CrudRepository<Tour, Integer> {
     @Override
     @RestResource(exported = false)
     void deleteAll();
+
 }
